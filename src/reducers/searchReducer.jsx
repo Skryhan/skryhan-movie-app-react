@@ -1,4 +1,4 @@
-import {SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE, LOADING} from '../actions/types.jsx'
+import {SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE, LOADING} from '../actions/types'
 
 const initialState = {
     text: '',

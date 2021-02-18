@@ -34,7 +34,6 @@
 }
 .search_text{
     margin-right: 1.5vw;
-    padding: 5px 0;
 }
 .search_panel{
     width: 70vw;
@@ -42,6 +41,7 @@
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    line-height: 5vh;
 }
 .btn{
     color: #ffffff;
