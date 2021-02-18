@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import searchReducer from './searchReducer.jsx'
+import searchReducer from './searchReducer'
 
 export default combineReducers({
     movies: searchReducer

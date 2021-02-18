@@ -8,20 +8,20 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'), 
         filename: 'main.bundle.js',
-        publicPath: '/',
+        publicPath: '/', 
     },
     resolve: {
         modules: [
             'node_modules',
             'src',
         ],
-        extensions: ['.js', 'jsx']
+        extensions: ['.js', '.jsx']
     },
     module: {
         rules: [
             {
                 test: /\.js?x$/,
-                exclude: /(node_modules|browser_components)/,
+                exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
