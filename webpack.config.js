@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     mode: 'development',
     devtool: 'source-map',
-    entry: './src/main.js',
+    entry: './src/main.jsx',
     output: {
         path: path.resolve(__dirname, 'dist'), 
         filename: 'main.bundle.js',
@@ -14,12 +14,13 @@ module.exports = {
         modules: [
             'node_modules',
             'src',
-        ]
+        ],
+        extensions: ['.js', 'jsx']
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.js?x$/,
                 exclude: /(node_modules|browser_components)/,
                 use: {
                     loader: 'babel-loader',
