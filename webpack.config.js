@@ -28,6 +28,11 @@ module.exports = {
                         presets: [
                             '@babel/preset-env',
                             '@babel/preset-react'
+                        ],
+                        plugins: [
+                            [
+                                '@babel/plugin-proposal-class-properties'
+                            ]
                         ]
                     }
                 }
@@ -37,7 +42,7 @@ module.exports = {
                 use: ['style-loader', 'css-loader'],
             },
             {
-                test: /\.png$/i,
+                test: /\.(png|jpe?g|gif)$/i,
                 use: ['file-loader'],
             },
             {
