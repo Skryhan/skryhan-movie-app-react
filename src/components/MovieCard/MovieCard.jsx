@@ -10,11 +10,10 @@ export class MovieCard extends Component {
 
     return (
       <div className='movie__element'>
-        <Link to={'/movie/' + movie.id}>
+        <Link className='movie__link' to={'/movie/' + movie.id}>
           <div className='movie__img'>
             <img src={movie.poster_path}></img>
           </div>
-        </Link>
         <div className='movie__info'>
           <div className='movie__info__text'>
             <h4>{movie.title}</h4>
@@ -24,6 +23,7 @@ export class MovieCard extends Component {
             <p>{movie.release_date.slice(0, -6)}</p>
           </div>
         </div>
+        </Link>
       </div>
     )
   }
