@@ -3,17 +3,38 @@ import { connect } from 'react-redux'
 import { fetchMovie, setLoading } from '../../actions/searchActions'
 import Loading from '../Loading/Loading'
 import './MovieInfo.css'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link, Redirect } from 'react-router-dom'
 
 
 export class MovieInfo extends Component {
 
+    constructor(props){
+        super(props)
+        this.state = {currentKey: ''}
+        this.handleKeyPress = this.handleKeyPress.bind(this)
+      }
+      handleKeyPress(e) {
+        this.setState({currentKey: e.keyCode})
+        if(e.keyCode === 27) {
+            console.log('You just pressed Escape!')
+            this.setState({referrer: '/'})
+        }
+    }
+
     componentDidMount() {
         this.props.fetchMovie(this.props.match.params.id)
         this.props.setLoading()
+        document.addEventListener('keydown', this.handleKeyPress)
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keydown', this.handleKeyPress);
     }
 
     render() {
+        const {referrer} = this.state
+        if (referrer) return <Redirect to={referrer} />
+
         const { loading, movie } = this.props
         let movieInfo = (
                 <div className='modal__wrapper'>

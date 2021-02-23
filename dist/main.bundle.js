@@ -2183,6 +2183,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SearchForm_SearchForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! .//../SearchForm/SearchForm */ "./src/components/SearchForm/SearchForm.jsx");
 /* harmony import */ var _MoviesContainer_MoviesContainer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! .//../MoviesContainer/MoviesContainer */ "./src/components/MoviesContainer/MoviesContainer.jsx");
 /* harmony import */ var _MovieInfo_MovieInfo__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../MovieInfo/MovieInfo */ "./src/components/MovieInfo/MovieInfo.jsx");
+/* harmony import */ var _MovieInfo_MovieInfo__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_MovieInfo_MovieInfo__WEBPACK_IMPORTED_MODULE_5__);
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2232,7 +2233,7 @@ var Landing = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_SearchForm_SearchForm__WEBPACK_IMPORTED_MODULE_3__.default, null), loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Loading_Loading__WEBPACK_IMPORTED_MODULE_2__.default, null) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MoviesContainer_MoviesContainer__WEBPACK_IMPORTED_MODULE_4__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Switch, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
         exact: true,
         path: "/film/:id"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_MovieInfo_MovieInfo__WEBPACK_IMPORTED_MODULE_5__.default, null))));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement((_MovieInfo_MovieInfo__WEBPACK_IMPORTED_MODULE_5___default()), null))));
     }
   }]);
 
@@ -2370,108 +2371,9 @@ var MovieCard = /*#__PURE__*/function (_Component) {
 /*!************************************************!*\
   !*** ./src/components/MovieInfo/MovieInfo.jsx ***!
   \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Modal": () => (/* binding */ Modal),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_searchActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/searchActions */ "./src/actions/searchActions.jsx");
-/* harmony import */ var _Loading_Loading__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../Loading/Loading */ "./src/components/Loading/Loading.jsx");
-/* harmony import */ var _MovieInfo_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./MovieInfo.css */ "./src/components/MovieInfo/MovieInfo.css");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-
-
-
-
-var Modal = /*#__PURE__*/function (_Component) {
-  _inherits(Modal, _Component);
-
-  var _super = _createSuper(Modal);
-
-  function Modal() {
-    _classCallCheck(this, Modal);
-
-    return _super.apply(this, arguments);
-  }
-
-  _createClass(Modal, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.props.fetchMovie(this.props.match.params.id);
-      this.props.setLoading();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var _this$props = this.props,
-          loading = _this$props.loading,
-          movie = _this$props.movie;
-      var movieInfo = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "modal__wrapper"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
-        className: "modal",
-        style: {
-          background: "linear-gradient(rgba(0,0,0,0.6),\n    rgba(0,0,0,0.6)), url(".concat(movie.poster_path, "), center no-repeat")
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h3", {
-        className: "movie__title"
-      }, movie.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-        className: "movie__genre"
-      }, movie.genres), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-        className: "movie__description"
-      }, movie.overview), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-        className: "movie__popularity"
-      }, "Popularity: ", movie.vote_average), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("p", {
-        className: "movie__budget"
-      }, "Budget: $", movie.budget)));
-      var content = loading ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Loading_Loading__WEBPACK_IMPORTED_MODULE_3__.default, null) : movieInfo;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, content);
-    }
-  }]);
-
-  return Modal;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
-
-var mapStateToProps = function mapStateToProps(state) {
-  return {
-    loading: state.movies.loading,
-    movie: state.movies.movie
-  };
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.withRouter)((0,react_redux__WEBPACK_IMPORTED_MODULE_1__.connect)(mapStateToProps, {
-  fetchMovie: _actions_searchActions__WEBPACK_IMPORTED_MODULE_2__.fetchMovie,
-  setLoading: _actions_searchActions__WEBPACK_IMPORTED_MODULE_2__.setLoading
-})(Modal)));
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: D:\\TMS\\JS\\skryhan-movie-app-react\\src\\components\\MovieInfo\\MovieInfo.jsx: Missing semicolon (20:17)\n\n\u001b[0m \u001b[90m 18 |\u001b[39m         \u001b[36mif\u001b[39m(e\u001b[33m.\u001b[39mkeyCode \u001b[33m===\u001b[39m \u001b[35m27\u001b[39m) {\u001b[0m\n\u001b[0m \u001b[90m 19 |\u001b[39m             console\u001b[33m.\u001b[39mlog(\u001b[32m'You just pressed Escape!'\u001b[39m)\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 20 |\u001b[39m             \u001b[33m<\u001b[39m\u001b[33mLink\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m'movie__link'\u001b[39m to\u001b[33m=\u001b[39m{{ pathname\u001b[33m:\u001b[39m \u001b[32m'/film/'\u001b[39m \u001b[33m+\u001b[39m movie\u001b[33m.\u001b[39mid\u001b[33m,\u001b[39m state\u001b[33m:\u001b[39m { modal\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m } }}\u001b[33m>\u001b[39m\u001b[33m<\u001b[39m\u001b[33m/\u001b[39m\u001b[33mLink\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 21 |\u001b[39m         }\u001b[0m\n\u001b[0m \u001b[90m 22 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 23 |\u001b[39m\u001b[0m\n    at Object._raise (D:\\TMS\\JS\\skryhan-movie-app-react\\node_modules\\@babel\\parser\\lib\\index.js:776:17)\n    at Object.raiseWithData (D:\\TMS\\JS\\skryhan-movie-app-react\\node_modules\\@babel\\parser\\lib\\index.js:769:17)\n    at Object.raise (D:\\TMS\\JS\\skryhan-movie-app-react\\node_modules\\@babel\\parser\\lib\\index.js:737:17)\n    at Object.semicolon (D:\\TMS\\JS\\skryhan-movie-app-react\\node_modules\\@babel\\parser\\lib\\index.js:9235:10)\n    at Object.parseExpressionStatement (D:\\TMS\\JS\\skryhan-movie-app-react\\node_modules\\@babel\\parser\\lib\\index.js:12386:10)\n    at Object.parseStatementContent (D:\\TMS\\JS\\skryhan-movie-app-react\\node_modules\\@babel\\parser\\lib\\index.js:11982:19)\n    at Object.parseStatement (D:\\TMS\\JS\\skryhan-movie-app-react\\node_modules\\@babel\\parser\\lib\\index.js:11846:17)\n    at Object.parseBlockOrModuleBlockBody (D:\\TMS\\JS\\skryhan-movie-app-react\\node_modules\\@babel\\parser\\lib\\index.js:12428:25)\n    at Object.parseBlockBody (D:\\TMS\\JS\\skryhan-movie-app-react\\node_modules\\@babel\\parser\\lib\\index.js:12419:10)\n    at Object.parseBlock (D:\\TMS\\JS\\skryhan-movie-app-react\\node_modules\\@babel\\parser\\lib\\index.js:12403:10)");
 
 /***/ }),
 
@@ -2890,33 +2792,6 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, ".row {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  max-width: 100vw;\r\n  justify-content: center;\r\n}\r\n.movie__element {\r\n  width: 20vw;\r\n  background-color: #ffffff;\r\n  margin: 0 2vw 9vh 2vw;\r\n  transition: all 0.2s;\r\n}\r\n.movie__element:hover {\r\n  transform: scale(1.02);\r\n}\r\n.movie__img img {\r\n  width: 100%;\r\n  max-height: 65vh;\r\n}\r\n.movie__info {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  padding: 7px;\r\n}\r\n.movie__info__text {\r\n  margin-right: 4vw;\r\n}\r\n.movie__info__text h4 {\r\n  text-transform: uppercase;\r\n  margin-bottom: 7px;\r\n  font-size: 2vh;\r\n}\r\n.movie__info__text p {\r\n  color: #3b3637;\r\n  font-size: 2vh;\r\n  margin-bottom: 7px;\r\n}\r\n.movie__info__year p {\r\n  border: 1px solid #3b3637;\r\n  font-size: 2vh;\r\n  padding: 3px;\r\n  line-height: 1;\r\n}\r\n.movie__link{\r\n  text-decoration: none;\r\n  color: #000000;\r\n}", "",{"version":3,"sources":["webpack://./src/components/MovieCard/MovieCard.css"],"names":[],"mappings":"AAAA;EACE,aAAa;EACb,eAAe;EACf,gBAAgB;EAChB,uBAAuB;AACzB;AACA;EACE,WAAW;EACX,yBAAyB;EACzB,qBAAqB;EACrB,oBAAoB;AACtB;AACA;EACE,sBAAsB;AACxB;AACA;EACE,WAAW;EACX,gBAAgB;AAClB;AACA;EACE,aAAa;EACb,8BAA8B;EAC9B,YAAY;AACd;AACA;EACE,iBAAiB;AACnB;AACA;EACE,yBAAyB;EACzB,kBAAkB;EAClB,cAAc;AAChB;AACA;EACE,cAAc;EACd,cAAc;EACd,kBAAkB;AACpB;AACA;EACE,yBAAyB;EACzB,cAAc;EACd,YAAY;EACZ,cAAc;AAChB;AACA;EACE,qBAAqB;EACrB,cAAc;AAChB","sourcesContent":[".row {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  max-width: 100vw;\r\n  justify-content: center;\r\n}\r\n.movie__element {\r\n  width: 20vw;\r\n  background-color: #ffffff;\r\n  margin: 0 2vw 9vh 2vw;\r\n  transition: all 0.2s;\r\n}\r\n.movie__element:hover {\r\n  transform: scale(1.02);\r\n}\r\n.movie__img img {\r\n  width: 100%;\r\n  max-height: 65vh;\r\n}\r\n.movie__info {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  padding: 7px;\r\n}\r\n.movie__info__text {\r\n  margin-right: 4vw;\r\n}\r\n.movie__info__text h4 {\r\n  text-transform: uppercase;\r\n  margin-bottom: 7px;\r\n  font-size: 2vh;\r\n}\r\n.movie__info__text p {\r\n  color: #3b3637;\r\n  font-size: 2vh;\r\n  margin-bottom: 7px;\r\n}\r\n.movie__info__year p {\r\n  border: 1px solid #3b3637;\r\n  font-size: 2vh;\r\n  padding: 3px;\r\n  line-height: 1;\r\n}\r\n.movie__link{\r\n  text-decoration: none;\r\n  color: #000000;\r\n}"],"sourceRoot":""}]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/components/MovieInfo/MovieInfo.css":
-/*!**************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/components/MovieInfo/MovieInfo.css ***!
-  \**************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ".modal {\r\n    width: 38vw;\r\n    min-height: 300px;\r\n    position: absolute;\r\n    top: 20vh;\r\n    left: 30vw;\r\n    border: 10px solid #ffffff;\r\n    box-shadow: 2px 4px 20px 0px rgba(0, 0, 0, 0.75);\r\n    padding: 20px;\r\n    overflow: hidden;\r\n    color: #ffffff;\r\n}\r\n.movie__title{\r\n  margin-bottom: 10px;\r\n  font-size: 30px;\r\n}\r\n.modal p{\r\n  margin-bottom: 15px;\r\n}", "",{"version":3,"sources":["webpack://./src/components/MovieInfo/MovieInfo.css"],"names":[],"mappings":"AAAA;IACI,WAAW;IACX,iBAAiB;IACjB,kBAAkB;IAClB,SAAS;IACT,UAAU;IACV,0BAA0B;IAC1B,gDAAgD;IAChD,aAAa;IACb,gBAAgB;IAChB,cAAc;AAClB;AACA;EACE,mBAAmB;EACnB,eAAe;AACjB;AACA;EACE,mBAAmB;AACrB","sourcesContent":[".modal {\r\n    width: 38vw;\r\n    min-height: 300px;\r\n    position: absolute;\r\n    top: 20vh;\r\n    left: 30vw;\r\n    border: 10px solid #ffffff;\r\n    box-shadow: 2px 4px 20px 0px rgba(0, 0, 0, 0.75);\r\n    padding: 20px;\r\n    overflow: hidden;\r\n    color: #ffffff;\r\n}\r\n.movie__title{\r\n  margin-bottom: 10px;\r\n  font-size: 30px;\r\n}\r\n.modal p{\r\n  margin-bottom: 15px;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39667,36 +39542,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_MovieCard_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
-
-/***/ }),
-
-/***/ "./src/components/MovieInfo/MovieInfo.css":
-/*!************************************************!*\
-  !*** ./src/components/MovieInfo/MovieInfo.css ***!
-  \************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_MovieInfo_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!./MovieInfo.css */ "./node_modules/css-loader/dist/cjs.js!./src/components/MovieInfo/MovieInfo.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_MovieInfo_css__WEBPACK_IMPORTED_MODULE_1__.default, options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_MovieInfo_css__WEBPACK_IMPORTED_MODULE_1__.default.locals || {});
 
 /***/ }),
 
