@@ -1,3 +1,19 @@
-.modal{
-    display: flex;
+.modal {
+    width: 38vw;
+    min-height: 300px;
+    position: absolute;
+    top: 20vh;
+    left: 30vw;
+    border: 10px solid #ffffff;
+    box-shadow: 2px 4px 20px 0px rgba(0, 0, 0, 0.75);
+    padding: 20px;
+    overflow: hidden;
+    color: #ffffff;
+}
+.movie__title{
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+.modal p{
+  margin-bottom: 15px;
 }

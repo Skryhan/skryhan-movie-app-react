@@ -9,7 +9,6 @@
   background-color: #ffffff;
   margin: 0 2vw 9vh 2vw;
   transition: all 0.2s;
-  cursor: pointer;
 }
 .movie__element:hover {
   transform: scale(1.02);
@@ -41,4 +40,8 @@
   font-size: 2vh;
   padding: 3px;
   line-height: 1;
+}
+.movie__link{
+  text-decoration: none;
+  color: #000000;
 }
