@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    outline: none;
+    box-sizing: border-box;
+}
+.searchPanel{
+    height: 7vh;
+    width: 100vw;
+    background-color: #a5a4a4;
+    margin-bottom: 10vh;
+}
+.searchPanel__content{
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    align-items: center;
+    font: 600 2.5vh sans-serif;
+    padding: 2.2vh;
+}
+.searchPanel__content span{
+    margin-left: 2vw;
+}
+.searchPanel__content a{
+    margin-left: 2vw;
+    text-decoration: none;
+    color: #000000;
+    transition: .2s linear;
+}
+.activeSort{
+    color: #f85163;
+}
