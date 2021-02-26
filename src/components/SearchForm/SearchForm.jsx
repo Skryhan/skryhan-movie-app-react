@@ -13,6 +13,7 @@ export class SearchForm extends Component {
     this.props.setLoading()
     const titleActive = document.querySelector('#title')
     const genresActive = document.querySelector('#genres')
+    const search = document.querySelector('#search')
     if (titleActive){
       titleActive.addEventListener('click', ()=>{
           titleActive.classList.add('active')
@@ -24,6 +25,10 @@ export class SearchForm extends Component {
             genresActive.classList.add('active')
             titleActive.classList.remove('active')
         })
+    }
+    if (search){
+      titleActive.classList.add('active')
+      genresActive.classList.remove('active')
     }
   }
   onClick = (e) => {
@@ -46,7 +51,7 @@ export class SearchForm extends Component {
               <button className='btn' id='genres' onClick={this.onClick}>genre</button>
             </div>
             <div className='search_panel_right'>
-              <button type='submit' className='btn active search'>
+              <button id='search' type='submit' className='btn active search'>
                 search
               </button>
             </div>
