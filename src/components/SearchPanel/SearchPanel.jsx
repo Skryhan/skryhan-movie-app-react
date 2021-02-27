@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { sortByR } from '../../actions/searchActions'
+import { sortBy } from '../../actions/searchActions'
 import './SearchPanel.css'
 
 export class SearchPanel extends Component {
@@ -16,7 +16,7 @@ export class SearchPanel extends Component {
                         <span>Sort by</span>
                         <select className='select' value={this.props.sort}
                             onChange={(event) => {
-                                this.props.sortByR(
+                                this.props.sortBy(
                                     this.props.filteredM,
                                     event.target.value
                                 )}}>
@@ -37,4 +37,4 @@ const mapStateToProps = state => ({
     filteredM: state.movies.filteredM
 })
 
-export default connect(mapStateToProps, { sortByR })(SearchPanel)
+export default connect(mapStateToProps, { sortBy })(SearchPanel)
