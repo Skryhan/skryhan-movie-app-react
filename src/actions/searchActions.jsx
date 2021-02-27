@@ -1,4 +1,4 @@
-import {SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE, SORT_MOVIES, LOADING} from './types'
+import {SEARCH_MOVIE, FETCH_MOVIES, FETCH_MOVIE, SORT_MOVIES_BY_R, LOADING} from './types'
 import axios from 'axios'
 
 export const searchMovie = text => dispatch => {
@@ -43,9 +43,20 @@ export const setLoading = () => {
       type: LOADING
     }
 }
-export const sortMovies = () => dispatch => {
+export const sortByR = (movies, sort) => dispatch => {
+  const sortedMovies = movies.map(a => a)
+  if (sort ==='rating'){
+    sortedMovies.sort((a, b) => (b.vote_average - a.vote_average)) 
+  }
+  if (sort ==='release date'){
+    sortedMovies.sort((a, b) => (new Date(b.release_date) - new Date(a.release_date))) 
+  }
   dispatch({
-      type: SORT_MOVIES
+      type: SORT_MOVIES_BY_R,
+      payload: {
+        sort: sort,
+        movies: sortedMovies,
+      }
   })
 }
   

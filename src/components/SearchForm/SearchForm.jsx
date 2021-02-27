@@ -32,7 +32,7 @@ export class SearchForm extends Component {
     }
   }
   onClick = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     this.props.fetchMoviesByG(this.props.text)
     this.props.setLoading()
   }
