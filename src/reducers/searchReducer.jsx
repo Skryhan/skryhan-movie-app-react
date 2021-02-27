@@ -5,6 +5,7 @@ const initialState = {
     movies: [],
     loading: false,
     movie: [],
+    filteredM: [],
 }
 
 export default function(state = initialState, action) {
@@ -19,7 +20,8 @@ export default function(state = initialState, action) {
             return{
                 ...state,
                 movies: action.payload,
-                loading: false
+                loading: false,
+                filteredM: action.payload
             }
         case FETCH_MOVIE:
             return{
@@ -28,19 +30,10 @@ export default function(state = initialState, action) {
                 loading: false
         }
         case SORT_MOVIES:
-            const sortedMovies = state.movies.map(a => a)
            return {
-               sortBy: action.payload,
-               movies: sortedMovies.sort((a,b)=> {
-                   if (action.payload ==='rating'){
-                       return b.vote_average - a.vote_average
-                   }
-                   if (action.payload ==='release date'){
-                       return (  new Date(b.release_date) - new Date(a.release_date))
-
-                   }
-
-                })
+               ...state,
+               sort: action.payload.sort,
+               filteredM: action.payload.movies
             }
         case LOADING:
             return{
