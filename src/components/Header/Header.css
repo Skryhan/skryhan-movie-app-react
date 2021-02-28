@@ -5,9 +5,12 @@
     outline: none;
     box-sizing: border-box;
 }
-.header_img img{
-    width: 100vw;
+.header_img{
+    max-width: 100vw;
     line-height: 1;
     height: auto;
     margin-bottom: -10px;
+}
+.header_img img{
+    width: 100%;
 }

@@ -10,6 +10,12 @@
   justify-content: center;
   pointer-events: none;
 }
+.modal__wrapper span{
+  color: #ffffff;
+  position: fixed;
+  top: 17vh;
+  right: 3vw;
+}
 .modal {
   width: 38vw;
   min-height: 300px;

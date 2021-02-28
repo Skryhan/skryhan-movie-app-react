@@ -16,7 +16,6 @@ export class MovieInfo extends Component {
       handleKeyPress(e) {
         this.setState({currentKey: e.keyCode})
         if(e.keyCode === 27) {
-            console.log('You just pressed Escape!')
             this.setState({referrer: '/'})
         }
     }
@@ -38,6 +37,7 @@ export class MovieInfo extends Component {
         const { loading, movie } = this.props
         let movieInfo = (
                 <div className='modal__wrapper'>
+                    <span>Press Esc to exit</span>
                     <div className='modal' style={{ background: `linear-gradient(rgba(0,0,0,0.6),
     rgba(0,0,0,0.6)), url(${movie.poster_path}), center no-repeat` }}>
                         <h3 className='movie__title'>{movie.title}</h3>
@@ -48,7 +48,7 @@ export class MovieInfo extends Component {
                     </div>
                 </div>
         )
-            let content = loading ? <Loading /> : movieInfo
+            let content = /* loading ? <Loading /> :  */movieInfo
 
             return <div>{content}</div>
     }
